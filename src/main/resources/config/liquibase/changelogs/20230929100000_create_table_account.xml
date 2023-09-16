@@ -1,0 +1,32 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet id="20230929100000-1" author="chrysthian.moizes">
+        <createTable tableName="account">
+            <column name="id" type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_name" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="document" type="varchar(11)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="date_birth" type="date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="varchar(30)" remarks="ACTIVE, INACTIVE, BLOCKED">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createSequence incrementBy="1" sequenceName="seq_account" startValue="1"/>
+    </changeSet>
+
+</databaseChangeLog>

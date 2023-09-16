@@ -1,0 +1,21 @@
+version: '2'
+services:
+  postgres:
+    extends:
+      file: postgres.yml
+      service: postgres
+    container_name: postgres
+
+  # rabbitmq:
+  #   extends:
+  #     file: rabbitmq.yml
+  #     service: rabbitmq
+  #   container_name: rabbitmq
+
+  # elasticsearch:
+  #   extends:
+  #     file: elasticsearch.yml
+  #     service: elasticsearch
+  #   container_name: elasticsearch
+    
+        

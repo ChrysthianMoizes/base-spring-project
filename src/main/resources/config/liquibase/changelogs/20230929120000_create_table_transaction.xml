@@ -1,0 +1,43 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet id="20230929100000-1" author="chrysthian.moizes">
+        <createTable tableName="transaction">
+            <column name="id" type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="account_origin_id" type="int">
+                <constraints nullable="false" />
+            </column>
+            <column name="account_destination_id" type="int">
+                <constraints nullable="false" />
+            </column>
+            <column name="value" type="float8">
+                <constraints nullable="false" />
+            </column>
+            <column name="created_at" type="timestamp">
+                <constraints nullable="false" />
+            </column>
+            <column name="type" type="varchar(30)" remarks="DEPOSIT, TRANSFER, TICKET">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="varchar(30)" remarks="APPROVED, CANCELED, PENDING, BLOCKED">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createSequence incrementBy="1" sequenceName="seq_transaction" startValue="1"/>
+
+        <addForeignKeyConstraint baseTableName="transaction" baseColumnNames="account_origin_id" constraintName="fk_account_origin_id"
+                                 referencedTableName="account"
+                                 referencedColumnNames="id" />
+
+        <addForeignKeyConstraint baseTableName="transaction" baseColumnNames="account_destination_id" constraintName="fk_account_destination_id"
+                                 referencedTableName="account"
+                                 referencedColumnNames="id" />
+    </changeSet>
+
+</databaseChangeLog>
