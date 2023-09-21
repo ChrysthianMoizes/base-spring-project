@@ -12,18 +12,14 @@
 	<artifactId>service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>service</name>
-	<description>Sistema Gerenciador de Trocas</description>
+	<description>Sistema Gerenciador de Transferências</description>
 	<properties>
 		<java.version>1.8</java.version>
-		<spring-cloud.version>2020.0.2</spring-cloud.version>
+		<spring-cloud.version>Hoxton.SR12</spring-cloud.version>
 		<testcontainers.version>1.15.3</testcontainers.version>
 		<lombok.version>1.18.28</lombok.version>
 	</properties>
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-mail</artifactId>
-		</dependency>
 		<dependency>
 			<groupId>org.mapstruct</groupId>
 			<artifactId>mapstruct</artifactId>
@@ -42,6 +38,21 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+
+		<!--	Feign	-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.github.openfeign</groupId>
+			<artifactId>feign-httpclient</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.github.openfeign</groupId>
+			<artifactId>feign-jackson</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>org.liquibase</groupId>
 			<artifactId>liquibase-core</artifactId>
