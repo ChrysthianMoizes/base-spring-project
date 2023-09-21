@@ -12,8 +12,8 @@ import java.time.LocalDateTime;
 public class TransactionDomain {
 
     private Integer id;
-    private AccountDomain accountOrigin;
-    private AccountDomain accountDestination;
+    private AccountInfoDomain accountOrigin;
+    private AccountInfoDomain accountDestination;
     private BigDecimal value;
     private LocalDateTime createdAt;
     private TransactionStatus status;

@@ -26,7 +26,7 @@ public class AccountEntity implements Serializable {
     private Integer id;
 
     @Column(name = "name")
-    private String nome;
+    private String name;
 
     @Column(name = "last_name")
     private String lastName;
