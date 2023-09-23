@@ -17,7 +17,7 @@ public class AccountDomain {
 
     @NotNull
     @Size(max = 50)
-    private String nome;
+    private String name;
 
     @NotNull
     @Size(max = 100)

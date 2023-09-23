@@ -1,11 +1,16 @@
-version: '2'
+version: "2"
 services:
   postgres:
     extends:
       file: postgres.yml
       service: postgres
     container_name: postgres
-
+  negative-cpf-validator:
+    image: jpedroc/negative-cpf-validator:1.1.0
+    ports:
+      - '8081:8080'
+    volumes:
+      - ../src/main/resources/config/files:/app/files
   # rabbitmq:
   #   extends:
   #     file: rabbitmq.yml
