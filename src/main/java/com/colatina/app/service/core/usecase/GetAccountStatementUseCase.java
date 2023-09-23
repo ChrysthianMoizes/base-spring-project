@@ -11,7 +11,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class TransactionUseCase {
+public class GetAccountStatementUseCase {
 
     private final TransactionGateway transactionGateway;
 
