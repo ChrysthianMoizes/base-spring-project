@@ -1,6 +1,6 @@
 package com.colatina.app.service.entrypoint.api.handler;
 
-import com.colatina.app.service.core.domain.exception.BusinessException;
+import com.colatina.app.service.core.exception.BusinessException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
