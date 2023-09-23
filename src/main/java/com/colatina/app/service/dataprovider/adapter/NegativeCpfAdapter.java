@@ -1,4 +1,4 @@
-package com.colatina.app.service.dataprovider.gateway;
+package com.colatina.app.service.dataprovider.adapter;
 
 import com.colatina.app.service.core.gateway.NegativeCpfGateway;
 import com.colatina.app.service.dataprovider.client.negativecpfvalidator.NegativeCpfValidatorClient;
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class NegativeCpfGatewayImpl implements NegativeCpfGateway {
+public class NegativeCpfAdapter implements NegativeCpfGateway {
 
     private final NegativeCpfValidatorClient negativeCpfValidatorClient;
 
